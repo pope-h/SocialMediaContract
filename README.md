@@ -1,45 +1,29 @@
-# Solidity Social Media Contracts
+# Social Media Smart Contracts
 
-This repository contains the smart contracts for a decentralized social media platform built on Ethereum.
+This repository contains smart contracts for a social media platform built on Ethereum blockchain. The contracts are written in Solidity version 0.8.24 and utilize OpenZeppelin for ERC721 token implementation and ECDSA for signature verification.
 
 ## Contracts
 
-### 1. NFTFactory
+1. **NFTFactory.sol**: This contract handles the creation (minting) of non-fungible tokens (NFTs) using ERC721 standard. It allows users to mint NFTs with associated metadata.
 
-This contract is responsible for creating new NFTs. It uses the ERC721 standard.
+2. **UserAuthentication.sol**: This contract manages user authentication and roles. Users can register with a username and log in to interact with the platform.
 
-### 2. GaslessTransactionImplementation
+3. **SocialMedia.sol**: This contract implements the core functionalities of the social media platform, including creating NFTs, sharing NFTs, liking NFTs, commenting on NFTs, creating groups, and executing gasless transactions.
 
-This contract is designed to execute meta-transactions. It allows users to interact with the platform without needing to hold Ether.
+4. **GaslessTransactionImplementation.sol**: This contract provides functionality for executing meta-transactions, allowing users to perform actions without directly paying gas fees.
 
-### 3. SocialMedia
+5. **Group.sol**: This contract manages user groups within the platform. Users can create groups and add members to them.
 
-This contract contains the main logic for the social media platform. It allows users to create, share, like, and comment on NFTs. It also allows users to create groups.
+## Usage
 
-### 4. Group
+To use these contracts, deploy them to an Ethereum-compatible blockchain network using tools like Remix or Truffle. After deployment, interact with the contracts using a web3-enabled application or through Remix IDE.
 
-This contract allows users to create and manage groups. Groups can be used to organize users and NFTs.
+## Requirements
 
-### 5. UserAuthentication
-
-This contract handles user authentication. It keeps track of which Ethereum addresses are logged in.
-
-## Installation
-
-Provide instructions on how to install and compile the contracts.
-
-## Testing
-
-Provide instructions on how to run the tests for the contracts.
-
-## Deployment
-
-Provide instructions on how to deploy the contracts to a testnet or mainnet.
-
-## Contributing
-
-Provide instructions on how to contribute to the project.
+- Solidity compiler (version 0.8.24)
+- Ethereum development environment (Ganache, Remix, Truffle, etc.)
+- OpenZeppelin library (ERC721, ECDSA)
 
 ## License
 
-Provide information about the license.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
