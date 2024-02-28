@@ -24,6 +24,13 @@ To use these contracts, deploy them to an Ethereum-compatible blockchain network
 - Ethereum development environment (Ganache, Remix, Truffle, etc.)
 - OpenZeppelin library (ERC721, ECDSA)
 
+## Deployment to Sepolia testnet
+- NFTFactory contract deployed to 0x5A57A8F8B6b138e5A36B31644360A55ae98BdCA8
+- UserAuthentication contract deployed to 0x19d696bCb5674a7f0Ee2660B190D3c386792df15
+- Group contract deployed to 0x6657d7F2a47607fECbe75384be5600Fc02154A06
+- GaslessTransactionImplementation contract deployed to 0x1D684e2977956525Ac67a764949a2A92B5440Da9
+- SocialMedia contract deployed to 0x12cE20400188EC7d7F2aAC1db35B53d0ab5e8168
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

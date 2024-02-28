@@ -1,22 +1,29 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
+  const tokenName = "PopeNFT";
+  const tokenSymbol = "PNFT";
 
-  const lockedAmount = ethers.parseEther("0.001");
+  const nftFactory = await ethers.deployContract("NFTFactory", [tokenName, tokenSymbol]);
+  await nftFactory.waitForDeployment();
 
-  const lock = await ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
+  const userAuthentication = await ethers.deployContract("UserAuthentication", [nftFactory.target]);
+  await userAuthentication.waitForDeployment();
 
-  await lock.waitForDeployment();
+  const group = await ethers.deployContract("Group");
+  await group.waitForDeployment();
 
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
+  const gaslessTransactionImplementation = await ethers.deployContract("GaslessTransactionImplementation");
+  await gaslessTransactionImplementation.waitForDeployment();
+
+  const socialMedia = await ethers.deployContract("SocialMedia", [nftFactory.target, userAuthentication.target, group.target, gaslessTransactionImplementation.target]);
+  await socialMedia.waitForDeployment();
+
+  console.log(`NFTFactory contract deployed to ${nftFactory.target}`);
+  console.log(`UserAuthentication contract deployed to ${userAuthentication.target}`);
+  console.log(`Group contract deployed to ${group.target}`);
+  console.log(`GaslessTransactionImplementation contract deployed to ${gaslessTransactionImplementation.target}`);
+  console.log(`SocialMedia contract deployed to ${socialMedia.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

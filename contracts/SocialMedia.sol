@@ -37,7 +37,7 @@ contract SocialMedia {
         gaslessTxImplAddress = _gaslessTxImplAddress;
     }
 
-    function createNFT(string memory _tokenURI) private {
+    function createNFT(string memory _tokenURI) public {
         require(userAuth.isLoggedIn(msg.sender), "User not logged in");
         require(bytes(userAuth.attachedUserName(msg.sender)).length > 0, "User must have a username");
 
@@ -55,7 +55,7 @@ contract SocialMedia {
         emit NFTCreated(nftId, msg.sender);
     }
 
-    function shareNFT(uint256 _nftId) private {
+    function shareNFT(uint256 _nftId) public {
         require(_nftId < totalNFTs, "Invalid NFT ID");
 
         NFT storage nft = nfts[_nftId];
@@ -67,7 +67,7 @@ contract SocialMedia {
         emit NFTShared(_nftId, msg.sender);
     }
 
-    function likeNFT(uint256 _nftId) private {
+    function likeNFT(uint256 _nftId) public {
         require(_nftId < totalNFTs, "Invalid NFT ID");
 
         NFT storage nft = nfts[_nftId];
@@ -83,7 +83,7 @@ contract SocialMedia {
         emit NFTLiked(_nftId, msg.sender);
     }
 
-    function commentOnNFT(uint256 _nftId, string memory _comment) private {
+    function commentOnNFT(uint256 _nftId, string memory _comment) public {
         require(_nftId < totalNFTs, "Invalid NFT ID");
 
         NFT storage nft = nfts[_nftId];
