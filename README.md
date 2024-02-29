@@ -25,11 +25,11 @@ To use these contracts, deploy them to an Ethereum-compatible blockchain network
 - OpenZeppelin library (ERC721, ECDSA)
 
 ## Deployment to Sepolia testnet
-- NFTFactory contract deployed to 0x5A57A8F8B6b138e5A36B31644360A55ae98BdCA8
-- UserAuthentication contract deployed to 0x19d696bCb5674a7f0Ee2660B190D3c386792df15
-- Group contract deployed to 0x6657d7F2a47607fECbe75384be5600Fc02154A06
-- GaslessTransactionImplementation contract deployed to 0x1D684e2977956525Ac67a764949a2A92B5440Da9
-- SocialMedia contract deployed to 0x12cE20400188EC7d7F2aAC1db35B53d0ab5e8168
+- NFTFactory contract deployed to 0xb88018a0Ceb0F09a232b95d80cBd7D444bdc5E70
+- UserAuthentication contract deployed to 0xeeE560574E6338c86E9347E1FaEdd38318EF8F7F
+- Group contract deployed to 0x350B05Cc8D1ad15acC861000948cDe237a69F8Af
+- GaslessTransactionImplementation contract deployed to 0x221e9f48C353b9182aC0591C3547e2b62b110219
+- SocialMedia contract deployed to 0x7B606FCbbFE12eF46292EAC2043c223890bfAf48
 
 ## License
 

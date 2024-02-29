@@ -52,6 +52,8 @@ contract UserAuthentication {
         emit UserRegistered(msg.sender, _username);
     }
 
+    // The function below is used for when a wallet is connected
+    // In essence this will be set to true once a user connects their wallet
     function login() external userHasUserName {
         isLoggedIn[msg.sender] = true;
     }
